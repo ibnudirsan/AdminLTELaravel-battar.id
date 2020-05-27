@@ -1,22 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{ __('System Login | Madinah Soft') }}</title>
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="{{ asset('assets/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/bower_components/font-awesome/css/font-awesome.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/bower_components/Ionicons/css/ionicons.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/dist/css/AdminLTE.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/plugins/iCheck/square/blue.css') }}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <div class="login-box-body">
-    <p class="login-box-msg">{{ __('Madinah Soft | Admin LTE') }}</p>
+@extends('layouts.app')
 
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Register User') }}</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                                
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                 
@@ -79,10 +76,10 @@
                         </div>
                     </form>
 
+                    
+                </div>
+            </div>
         </div>
     </div>
-<script src="{{ asset('assets/bower_components/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/plugins/iCheck/icheck.min.js') }}"></script>
-</body>
-</html>
+</div>
+@endsection

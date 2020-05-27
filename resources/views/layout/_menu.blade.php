@@ -14,8 +14,14 @@
         <li class="header">Menu Admin Panel</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i>
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
           </a>
+          <ul class="treeview-menu">
+            <li class="active"><a href="{{ route('register') }}"><i class="fa fa-circle-o"></i> Register</a></li>
+          </ul>
         </li>
         
         {{-- Menu Keluar Aplikasi --}}
