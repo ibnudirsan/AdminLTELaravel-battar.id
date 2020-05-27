@@ -5,6 +5,8 @@ namespace Illuminate\Foundation\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\Registered;
+use App\student;
+use App\teacher;
 
 trait RegistersUsers
 {
@@ -57,6 +59,20 @@ trait RegistersUsers
      */
     protected function registered(Request $request, $user)
     {
-        //
+        if($request->role == "Siswa")
+        {
+            $student = student::create([
+                'user_id'   => $user->id,
+                'fullname'  => $request->fullname,
+                'address'   => $request->address
+            ]);
+
+        }elseif($request->role == "Guru"){
+            $teacher = teacher::create([
+                'user_id'   => $user->id,
+                'fullname'  => $request->fullname,
+                'address'   => $request->address
+            ]);
+        }
     }
 }

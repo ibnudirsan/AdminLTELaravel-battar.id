@@ -13,14 +13,17 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu Admin Panel</li>
         <li class="treeview">
-          <a href="#">
+          <a href="{{ route('home') }}">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
+            <li class="active"><a href="{{ route('home') }}"><i class="fa fa-circle-o"></i> Home</a></li>
             <li class="active"><a href="{{ route('register') }}"><i class="fa fa-circle-o"></i> Register</a></li>
+            <li class="active"><a href="{{ route('student') }}"><i class="fa fa-circle-o"></i> Register Siswa</a></li>
+            <li class="active"><a href="{{ route('teacher') }}"><i class="fa fa-circle-o"></i> Register Guru</a></li>
           </ul>
         </li>
         

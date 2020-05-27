@@ -15,15 +15,13 @@
 
                         <div class="card-header text-center">
                             <div class="modal-title text-center callout callout-success" id="ModalLabel">
-                                <i class="fa fa-user-plus" aria-hidden="true"> General Registration</i>
+                                <i class="fa fa-user-plus" aria-hidden="true"> Teachers Registration</i>
                             </div>
                         </div>
 
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                     
-                            <input id="role" type="hidden" class="form-control @error('role') is-invalid @enderror" name="role" value="General">
-
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
                     
@@ -31,6 +29,53 @@
                                     <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                     
                                     @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+    
+
+                            <div class="form-group row">
+                                <label for="fullname" class="col-md-4 col-form-label text-md-right">{{ __('Full Name') }}</label>
+                    
+                                <div class="col-md-6">
+                                    <input id="fullname" type="text" class="form-control @error('fullname') is-invalid @enderror" name="fullname">
+                    
+                                    @error('fullname')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="role" class="col-md-4 col-form-label text-md-right">{{ __('Role') }}</label>
+                    
+                                <div class="col-md-6">
+                                    <select class="form-control select2" style="width: 50%;" name="role">
+                                        <option selected="selected">Choice Role...</option>
+                                        <option value="Siswa">Siswa</option>
+                                        <option value="Guru">Guru</option>
+                                    </select>
+                    
+                                    @error('address')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
+                    
+                                <div class="col-md-6">
+                                    <textarea rows="3" id="address" class="form-control" @error('address') is-invalid @enderror name="address" required autocomplete="address"></textarea>
+                    
+                                    @error('address')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>

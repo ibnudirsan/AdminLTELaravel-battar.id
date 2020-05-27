@@ -14,8 +14,19 @@
                         </div>
                     @endif
 
-                    You are logged in!
-                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
+                    @if(empty($verify->email_verified_at))
+                    {{ __('Akun Anda Belum Terverifikasi, Jika Link Verifikasi sudah lebih dari 60 Menit, Silakan Kirim Kembali ke Email.') }} 
+                    
+                    <a href="{{ route('verification.resend') }}">
+                        <button type="button" class="btn btn-success btn-sm">
+                        {{ __('Resend') }}
+                        <i class="fa fa-share-square" aria-hidden="true"></i>
+                        </button>
+                    </a>
+
+                    @elseif(!empty($verify))
+                    {{ __('Akun Anda Sudah Terverifikasi.') }}
+                    @endif
                 </div>
             </div>
         </div>

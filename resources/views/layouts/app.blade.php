@@ -10,17 +10,20 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
 <!-- CSS Admin LTE  -->
-    <link rel="stylesheet" href="{{ asset('assets/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/bower_components/font-awesome/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/bower_components/Ionicons/css/ionicons.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/dist/css/AdminLTE.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/dist/css/skins/_all-skins.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/bower_components/morris.js/morris.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/bower_components/jvectormap/jquery-jvectormap.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+<link rel="stylesheet" href="{{ asset('assets/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/bower_components/font-awesome/css/font-awesome.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/bower_components/Ionicons/css/ionicons.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/plugins/iCheck/all.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/plugins/timepicker/bootstrap-timepicker.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/bower_components/select2/dist/css/select2.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/dist/css/AdminLTE.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/dist/css/skins/_all-skins.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/plugins/pace/pace.min.css') }}">
+<link rel="stylesheet" href="{{ asset('assets/plugins/iCheck/square/blue.css') }}">
 <!-- CSS Admin LTE  -->
 
 </head>
@@ -41,7 +44,7 @@
         <!-- Content Wrapper -->
         <div class="content-wrapper">
           <section class="content-header">
-              <small>::.. Madinah Tech App ..::</small>
+              {{-- <small>::.. Madinah Tech App ..::</small> --}}
           </section>
 
           <!-- Main content -->
@@ -62,25 +65,36 @@
 @endguest
 
 <!-- JS Admin LTE -->
-    <script src="{{ asset('assets/bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
-    <script> $.widget.bridge('uibutton', $.ui.button); </script>
-    <script src="{{ asset('assets/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/bower_components/raphael/raphael.min.js') }}"></script>
-    <script src="{{ asset('assets/bower_components/morris.js/morris.min.js') }}"></script>
-    <script src="{{ asset('assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-    <script src="{{ asset('assets/bower_components/jquery-knob/dist/jquery.knob.min.js') }}"></script>
-    <script src="{{ asset('assets/bower_components/moment/min/moment.min.js') }}"></script>
-    <script src="{{ asset('assets/bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
-    <script src="{{ asset('assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
-    <script src="{{ asset('assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
-    <script src="{{ asset('assets/bower_components/fastclick/lib/fastclick.js') }}"></script>
-    <script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
-    <script src="{{ asset('assets/dist/js/pages/dashboard.js') }}"></script>
-    <script src="{{ asset('assets/dist/js/demo.js') }}"></script>
+<script src="{{ asset('assets/bower_components/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/input-mask/jquery.inputmask.js') }}"></script>
+<script src="{{ asset('assets/plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
+<script src="{{ asset('assets/plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
+<script src="{{ asset('assets/bower_components/moment/min/moment.min.js') }}"></script>
+<script src="{{ asset('assets/bower_components/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+<script src="{{ asset('assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('assets/bower_components/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/timepicker/bootstrap-timepicker.min.js') }}"></script>
+<script src="{{ asset('assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/iCheck/icheck.min.js') }}"></script>
+<script src="{{ asset('assets/bower_components/fastclick/lib/fastclick.js') }}"></script>
+<script src="{{ asset('assets/dist/js/adminlte.min.js') }}"></script>
+<script src="{{ asset('assets/dist/js/demo.js') }}"></script>
+<script src="{{ asset('assets/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/input-mask/jquery.inputmask.js') }}"></script>
+<script src="{{ asset('assets/plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
+<script src="{{ asset('assets/plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
+<script src="{{ asset('assets/bower_components/PACE/pace.min.js') }}"></script>
 <!-- JS Admin LTE -->
+
+<script>
+    //menampilkan Select Option Group
+      $(function () {
+        // Select Combo Box
+        $('.select2').select2()
+      })
+</script>
 </body>
 </html>

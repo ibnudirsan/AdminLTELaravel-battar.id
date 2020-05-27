@@ -18,3 +18,7 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Siswa
+Route::get('/student','studentcontroller@index')->name('student');
+Route::get('/teacher','teachercontroller@index')->name('teacher');
