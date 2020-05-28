@@ -11,10 +11,12 @@
   <link rel="stylesheet" href="{{ asset('assets/dist/css/AdminLTE.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/plugins/iCheck/square/blue.css') }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  {!! NoCaptcha::renderJs() !!}
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <div class="login-box-body">
+    <div class="login-box-body">
     <p class="login-box-msg">{{ __('Madinah Soft | Admin LTE') }}</p>
 
     <form method="POST" action="{{ route('login') }}">
@@ -52,7 +54,7 @@
             <div class="col-md-6 offset-md-4">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
+    
                     <label class="form-check-label" for="remember">
                         {{ __('Remember Me') }}
                     </label>
@@ -60,23 +62,28 @@
             </div>
         </div>
 
-        <div class="form-group row mb-0">
+        {{-- <div class="form-group row mb-0">
             <div class="col-md-8 offset-md-4">
-                <button type="submit" class="btn btn-primary">
-                    {{ __('Login') }}
-                </button>
+                {!! app('captcha')->display() !!}
             </div>
+        </div> --}}
+
+    <div class="form-group row mb-0">
+        <div class="col-md-8 offset-md-4">
+            <button type="submit" class="btn btn-primary">
+                {{ __('Login') }}
+            </button>
         </div>
+    </div>
+
     </form>
+
 
     <p class="mb-1">
         <a href="{{ route('password.request') }}">{{ __('Lupa Password') }}</a>
     </p>
-      {{-- <p class="mb-0">
-        <a href="{{ route('register') }}" class="text-center">Register a new membership</a>
-      </p> --}}
 
-  </div>
+    </div>
 </div>
 <script src="{{ asset('assets/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('assets/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>

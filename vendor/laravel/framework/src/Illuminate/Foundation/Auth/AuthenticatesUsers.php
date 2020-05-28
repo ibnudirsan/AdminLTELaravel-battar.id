@@ -30,6 +30,14 @@ trait AuthenticatesUsers
      */
     public function login(Request $request)
     {
+        // dd($request->all());
+
+        // $this->validate($request, [
+        //     'name' => 'required',
+        //     'password' => 'required|min:6',
+        //     'g-recaptcha-response' => 'required|captcha'
+        // ]);
+
         $this->validateLogin($request);
 
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
@@ -67,6 +75,7 @@ trait AuthenticatesUsers
         $request->validate([
             $this->username() => 'required|string',
             'password' => 'required|string',
+            // 'g-recaptcha-response' => 'required|captcha',
         ]);
     }
 
