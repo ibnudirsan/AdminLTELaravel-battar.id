@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="{{ asset('assets/dist/css/AdminLTE.min.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/plugins/iCheck/square/blue.css') }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  {!! NoCaptcha::renderJs() !!}
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -39,6 +41,13 @@
                     @enderror
                 </div>
             </div>
+
+
+        {{-- <div class="form-group row mb-0">
+            <div class="col-md-8 offset-md-4">
+                {!! app('captcha')->display() !!}
+            </div>
+        </div> --}}
 
             <div class="form-group row mb-0">
                 <div class="col-md-6 offset-md-4">
